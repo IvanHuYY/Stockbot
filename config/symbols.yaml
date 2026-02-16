@@ -1,0 +1,15 @@
+# Watchlist: symbols to monitor and trade
+watchlist:
+  - AAPL
+  - MSFT
+  - GOOGL
+  - AMZN
+  - NVDA
+  - META
+  - TSLA
+  - JPM
+  - V
+  - UNH
+
+# Benchmark for comparison
+benchmark: SPY

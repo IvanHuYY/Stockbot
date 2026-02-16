@@ -1,0 +1,21 @@
+services:
+  bot:
+    build: .
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+    restart: unless-stopped
+    command: python scripts/run_bot.py
+
+  dashboard:
+    build: .
+    env_file: .env
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+    command: streamlit run stockbot/dashboard/app.py --server.port 8501 --server.address 0.0.0.0
+    depends_on:
+      - bot
